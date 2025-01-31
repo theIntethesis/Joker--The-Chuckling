@@ -1,0 +1,17 @@
+{
+  "id": "joker_the_chuckling",
+  "name": "Joker: The Chuckling",
+  "display_name": "JTC",
+  "author": [ "Intethesis" ],
+  "description": "A mod incorporating Magic: the Gathering elements into Balatro",
+  "prefix": "JTC",
+  "main_file": "main.lua",
+  "priority": 0,
+  "badge_colour": "",
+  "badge_text_colour": "",
+  "version": "0.1.0",
+  "dependencies": [
+    "Steamodded (>=1.*)",
+    "Lovely (>=0.6)"
+  ]
+}
