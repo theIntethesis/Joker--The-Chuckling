@@ -18,39 +18,116 @@ SMODS.Back {
 	apply = function(self)
 		G.E_MANAGER:add_event(Event({
 			func = function()
-				for _, card in ipairs(G.playing_cards) do
-					card:remove_from_deck()
+				for i = #G.playing_cards, 1, -1 do
+					local card  = G.playing_cards[i]
+					card:start_dissolve(nil, i == #G.playing_cards)
 				end
 				for i = 12, 1, -1 do
+					local r = ""
+					if i == 1 then
+						r = "Ace"
+					elseif i == 11 then
+						r = "Jack"
+					elseif i == 12 then
+						r = "Queen"
+					else
+						r = ''..i
+					end
 					local _card = create_playing_card({
-						front = 'W_'..i,
+						front = {
+							name = 'JTC_W_'..r,
+							suit = JTC.WhiteMana,
+							value = r,
+							nominal = i
+						},
 						center = G.P_CENTERS.c_base
 					}, G.deck)
 				end
 				for i = 12, 1, -1 do
+					local r = ""
+					if i == 1 then
+						r = "Ace"
+					elseif i == 11 then
+						r = "Jack"
+					elseif i == 12 then
+						r = "Queen"
+					else
+						r = ''..i
+					end
 					local _card = create_playing_card({
-						front = 'U_'..i,
+						front = {
+							name = 'JTC_U_'..r,
+							suit = JTC.BlueMana,
+							value = r,
+							nominal = i
+						},
 						center = G.P_CENTERS.c_base
 					}, G.deck)
 				end
 				for i = 12, 1, -1 do
+					local r = ""
+					if i == 1 then
+						r = "Ace"
+					elseif i == 11 then
+						r = "Jack"
+					elseif i == 12 then
+						r = "Queen"
+					else
+						r = ''..i
+					end
 					local _card = create_playing_card({
-						front = 'B_'..i,
+						front = {
+							name = 'JTC_B_'..r,
+							suit = JTC.BlackMana,
+							value = r,
+							nominal = i
+						},
 						center = G.P_CENTERS.c_base
 					}, G.deck)
 				end
 				for i = 12, 1, -1 do
+					local r = ""
+					if i == 1 then
+						r = "Ace"
+					elseif i == 11 then
+						r = "Jack"
+					elseif i == 12 then
+						r = "Queen"
+					else
+						r = ''..i
+					end
 					local _card = create_playing_card({
-						front = 'R_'..i,
+						front = {
+							name = 'JTC_R_'..r,
+							suit = JTC.RedMana,
+							value = r,
+							nominal = i
+						},
 						center = G.P_CENTERS.c_base
 					}, G.deck)
 				end
 				for i = 12, 1, -1 do
+					local r = ""
+					if i == 1 then
+						r = "Ace"
+					elseif i == 11 then
+						r = "Jack"
+					elseif i == 12 then
+						r = "Queen"
+					else
+						r = ''..i
+					end
 					local _card = create_playing_card({
-						front = 'G_'..i,
+						front = {
+							name = 'JTC_G_'..r,
+							suit = JTC.GreenMana,
+							value = r,
+							nominal = i
+						},
 						center = G.P_CENTERS.c_base
 					}, G.deck)
 				end
+				return true
 			end
 		}))
 	end

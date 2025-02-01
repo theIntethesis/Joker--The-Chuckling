@@ -6,13 +6,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-    key = "LeylineDeck",
-    path = "mana_cards.png",
-    px = 71,
-    py = 95
-}
-
-SMODS.Atlas {
     key = "Jokers",
     path = "Jokers.png",
     px = 71,
@@ -28,7 +21,7 @@ SMODS.Atlas {
 
 SMODS.Atlas {
     key = "HC_deck",
-    path = "hc_deck.png",
+    path = "mana_cards.png",
     px = 71,
     py = 95
 }
@@ -81,7 +74,8 @@ JTC.Suit = SMODS.Suit:extend{
 
 for _, path in ipairs{
     "decks.lua",
-    "suits.lua"
+    "suits.lua",
+    "debug.lua"
 } do
     assert(SMODS.load_file(path))()
 end
