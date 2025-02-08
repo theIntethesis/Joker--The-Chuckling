@@ -1,13 +1,12 @@
 SMODS.Back {
-	name = "Leyline Deck",
 	key = 'leyline',
 	loc_txt = {
 		name = "Leyline Deck",
 		text = {
 			"Start run with",
 			"12 cards each of",
-			"White, Blue, Black, Red,",
-			"and Green suit"
+			"{C:grey)}White{}, {C:blue}Blue{}, {C:black}Black{}, {C:red}Red{},",
+			"and {C:green}Green{} suit"
 		}
 	},
 	atlas = 'LeylineBack',
@@ -20,9 +19,9 @@ SMODS.Back {
 			func = function()
 				for i = #G.playing_cards, 1, -1 do
 					local card  = G.playing_cards[i]
-					card:start_dissolve(nil, i == #G.playing_cards)
+					card:start_dissolve(nil, true)
 				end
-				for i = 12, 1, -1 do
+				for i = 13, 1, -1 do
 					local r = ""
 					if i == 1 then
 						r = "Ace"
@@ -30,103 +29,68 @@ SMODS.Back {
 						r = "Jack"
 					elseif i == 12 then
 						r = "Queen"
+					elseif i == 13 then
+						r = "King"
 					else
 						r = ''..i
 					end
-					local _card = create_playing_card({
+					
+					local W_card = create_playing_card({
 						front = {
 							name = 'JTC_W_'..r,
-							suit = JTC.WhiteMana,
+							suit = "JTC_White",
 							value = r,
 							nominal = i
 						},
 						center = G.P_CENTERS.c_base
-					}, G.deck)
-				end
-				for i = 12, 1, -1 do
-					local r = ""
-					if i == 1 then
-						r = "Ace"
-					elseif i == 11 then
-						r = "Jack"
-					elseif i == 12 then
-						r = "Queen"
-					else
-						r = ''..i
-					end
-					local _card = create_playing_card({
+					}, G.deck, true)
+					assert(SMODS.change_base(W_card, "JTC_White", r))
+					
+					local U_card = create_playing_card({
 						front = {
 							name = 'JTC_U_'..r,
-							suit = JTC.BlueMana,
+							suit = "JTC_Blue",
 							value = r,
 							nominal = i
 						},
 						center = G.P_CENTERS.c_base
-					}, G.deck)
-				end
-				for i = 12, 1, -1 do
-					local r = ""
-					if i == 1 then
-						r = "Ace"
-					elseif i == 11 then
-						r = "Jack"
-					elseif i == 12 then
-						r = "Queen"
-					else
-						r = ''..i
-					end
-					local _card = create_playing_card({
+					}, G.deck, true)
+					assert(SMODS.change_base(U_card, "JTC_Blue", r))
+					
+					local B_card = create_playing_card({
 						front = {
 							name = 'JTC_B_'..r,
-							suit = JTC.BlackMana,
+							suit = "JTC_Black",
 							value = r,
 							nominal = i
 						},
 						center = G.P_CENTERS.c_base
-					}, G.deck)
-				end
-				for i = 12, 1, -1 do
-					local r = ""
-					if i == 1 then
-						r = "Ace"
-					elseif i == 11 then
-						r = "Jack"
-					elseif i == 12 then
-						r = "Queen"
-					else
-						r = ''..i
-					end
-					local _card = create_playing_card({
+					}, G.deck, true)
+					assert(SMODS.change_base(B_card, "JTC_Black", r))
+					
+					local R_card = create_playing_card({
 						front = {
 							name = 'JTC_R_'..r,
-							suit = JTC.RedMana,
+							suit = "JTC_Red",
 							value = r,
 							nominal = i
 						},
 						center = G.P_CENTERS.c_base
-					}, G.deck)
-				end
-				for i = 12, 1, -1 do
-					local r = ""
-					if i == 1 then
-						r = "Ace"
-					elseif i == 11 then
-						r = "Jack"
-					elseif i == 12 then
-						r = "Queen"
-					else
-						r = ''..i
-					end
-					local _card = create_playing_card({
+					}, G.deck, true)
+					assert(SMODS.change_base(R_card, "JTC_Red", r))
+					
+					local G_card = create_playing_card({
 						front = {
 							name = 'JTC_G_'..r,
-							suit = JTC.GreenMana,
+							suit = "JTC_Green",
 							value = r,
 							nominal = i
 						},
 						center = G.P_CENTERS.c_base
-					}, G.deck)
+					}, G.deck, true)
+					assert(SMODS.change_base(G_card, "JTC_Green", r))
 				end
+				
 				return true
 			end
 		}))

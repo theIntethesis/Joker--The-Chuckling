@@ -1,0 +1,39 @@
+White, Blue, Black, Red, Green {
+	scoring cards of SUIT give +3 mult.
+}
+
+Colorless Cards
+ > Reskin Stone?
+
+Azorius
+Dimir
+Rakdos
+ > MANA: BR
+ > Gains +Total[Black] chips, +#[Red] mult
+Gruul
+Selesnya
+Orzhov [DONE]
+ > MANA: WB
+ > Gives +$1 at end of round.
+ > (Currently +$0)
+Boros
+ > Token cards? Added to hand, destroyed after played, discarded, or shuffled into deck.
+Izzet
+ > Consumable cards
+Simic
+Golgari
+ > care about Destroyed Cards?
+
+Esper
+Grixis
+Jund [DONE]
+ > Destroys WU cards in hand, adds mult for cards eaten
+Naya
+Bant
+Mardu
+Abzan
+Sultai
+ > Discarded BGU cards get +10 chips permanently.
+Jeskai
+ > "Prowess": +10 chips, +1 mult this round whenever a consumable is used.
+Temur

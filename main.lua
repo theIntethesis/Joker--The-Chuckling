@@ -20,8 +20,8 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-    key = "HC_deck",
-    path = "mana_cards.png",
+    key = 'HC_deck',
+    path = 'hc_mana_cards.png',
     px = 71,
     py = 95
 }
@@ -35,47 +35,55 @@ SMODS.Atlas {
   
 
 SMODS.Atlas {
-    key = "LC_deck",
-    path = "mana_cards.png",
+    key = 'LC_deck',
+    path = 'lc_mana_cards.png',
     px = 71,
     py = 95
 }
   
 SMODS.Atlas {
-    key = "LC_ui",
-    path = "lc_ui.png",
+    key = 'LC_ui',
+    path = 'lc_ui.png',
     px = 18,
     py = 18
 }
   
 SMODS.Atlas {
-    key = "HC_ui",
-    path = "hc_ui.png",
+    key = 'HC_ui',
+    path = 'hc_ui.png',
     px = 18,
     py = 18
 }
 
-JTC = {
-    magic_pool = false
-}
+JTC = { 
+    manaPool = false,
+    C = {
+        WHITE = HEX('EAD8CA'),
+        BLUE = HEX('57B2DD'),
+        BLACK = HEX('29231C'),
+        RED = HEX('D84527'),
+        GREEN = HEX('88B272')
+    }
+ }
 
 JTC.Suit = SMODS.Suit:extend{
-    lc_atlas = 'LC_deck',
-    hc_atlas = 'HC_deck',
-    lc_ui_atlas = 'LC_ui',
-    hc_ui_atlas = 'HC_ui',
+    lc_atlas = 'JTC_LC_deck',
+    hc_atlas = 'JTC_HC_deck',
+    lc_ui_atlas = 'JTC_LC_ui',
+    hc_ui_atlas = 'JTC_HC_ui',
     in_pool = function(self, args)
-        if args.initial_deck then
-            return false
-        end
-        return JTC.magic_pool
-    end
+		if args.initial_deck then return false end
+		return JTC.manaPool
+	end
 }
 
-for _, path in ipairs{
+for _ , path in ipairs{
     "decks.lua",
     "suits.lua",
-    "debug.lua"
+    "debug.lua",
+    'jokers.lua', 
+    'hands.lua',
+    'utils.lua'
 } do
     assert(SMODS.load_file(path))()
 end
