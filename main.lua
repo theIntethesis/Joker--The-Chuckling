@@ -64,7 +64,11 @@ JTC = {
         RED = HEX('D84527'),
         GREEN = HEX('88B272')
     }
- }
+}
+
+JTC.Joker = SMODS.Joker:extend{
+    card_type = ""
+}
 
 JTC.Suit = SMODS.Suit:extend{
     lc_atlas = 'JTC_LC_deck',
@@ -83,7 +87,8 @@ for _ , path in ipairs{
     "debug.lua",
     'jokers.lua', 
     'hands.lua',
-    'utils.lua'
+    'utils.lua',
+    'consumable.lua'
 } do
     assert(SMODS.load_file(path))()
 end

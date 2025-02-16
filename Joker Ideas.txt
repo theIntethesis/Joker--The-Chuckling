@@ -1,39 +1,107 @@
 White, Blue, Black, Red, Green {
-	scoring cards of SUIT give +3 mult.
+	scoring cards of [SUIT] give +3 mult.
+  Plains [DONE]
+  Island
+  Swamp
+  Mountain
+  Forest
 }
 
 Colorless Cards
- > Reskin Stone?
+ > No Suit
+ > Destroyed when played
+ > +50 Chips | +1 Mult
 
 Azorius
 Dimir
-Rakdos
+ > Faction
+ > Cards are always drawn face-up.
+Rakdos [REWORK]
  > MANA: BR
  > Gains +Total[Black] chips, +#[Red] mult
 Gruul
+ > Spell
+ > MANA: 2GR
+ > Scoring Aces, 10s, and Face cards [do something]
 Selesnya
-Orzhov [DONE]
+Orzhov Tithe [DONE]
+ > Spell
  > MANA: WB
- > Gives +$1 at end of round.
+ > Gives +$1 at end of round. Resets at end of ante.
  > (Currently +$0)
 Boros
- > Token cards? Added to hand, destroyed after played, discarded, or shuffled into deck.
-Izzet
- > Consumable cards
+Izzet: RARE [DONE]
+ > Faction
+ > Whenever you cast a spell, copy it.
 Simic
 Golgari
- > care about Destroyed Cards?
+ > Faction
+ > Destroyed cards add a random token to consumables area. 
 
 Esper
+ > Faction
+ > Artifact give +1 mult for each Artifact you have.
 Grixis
-Jund [DONE]
+Jund Carnage [DONE]
+ > Spell
+ > MANA: 2BRG
  > Destroys WU cards in hand, adds mult for cards eaten
 Naya
-Bant
+Bant Exaltation [DONE]
+ > Spell
+ > MANA: W/U/G
+ > If played hand is a single card, x2 mult, x2 chips
 Mardu
 Abzan
-Sultai
+Sultai [DONE]
+ > Faction
  > Discarded BGU cards get +10 chips permanently.
-Jeskai
+Jeskai [DONE]
+ > Faction
  > "Prowess": +10 chips, +1 mult this round whenever a consumable is used.
 Temur
+ > 
+
+The Gatewatch [DONE]
+ > Faction
+ > Faction Jokers give x1.5 mult.
+
+Card Types {
+  Factions
+  Artifacts
+  Spells
+}
+
+Lightning Bolt
+ > Spell
+ > MANA: R
+ > +3 Mult. Repeatable.
+    > Playing a hand with RRR should give +9 mult, 3 at a time.
+
+Tamiyo's Journal [DONE]
+ > When blind is selected, add a Clue to your consumable area
+   > CLUE
+     > Use: Draw a card
+
+Avacyn's Memorial
+ > 
+Geth's Grimoire
+ > Discarding matters?
+Gisa's Shovel
+ > 
+Helm of Kaldra [DONE]
+ > Common
+ > +30 chips
+Sword of Kaldra [DONE]
+ > Common
+ > +4 mult
+Shield of Kaldra [DONE]
+ > Rare
+ > x1.5 mult.
+ > If you have the Helm, Sword, and Shield of Kaldra, merge them.
+Kaldra, Mirran Triad [DONE]
+ > Legendary
+ > x3 chips
+ > x3 mult
+ > -2 Joker slots
+Mishra's Self-Replicator

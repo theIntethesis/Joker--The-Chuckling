@@ -63,3 +63,33 @@ JTC.GreenMana = JTC.Suit {
 	hc_colour = HEX('88B272'),
 	lc_colour = HEX('88B272')
 }
+
+
+JTC.Colorless = SMODS.Enhancement {
+	key = 'Colorless',
+	loc_txt = {
+		name = 'Colorless',
+		text = {
+			"Colorless Card",
+			"{C:chips}+20{} chips",
+			"{C:red}Self-destructs"
+		}
+	},
+	atlas = 'backs.png',
+	pos = {x=0,y=5},
+	config = {
+		bonus_chips = 20
+	},
+	-- replace_base_card = true,
+	no_rank = true,
+	no_suit = true,
+	always_scores = true,
+	calculate = function(self, card, context)
+		if context.after == true then
+			JTC_UTIL.destroy_playing_cards({card}, card, {
+				message = 'Sacrificed!',
+				colour = G.C.GREY
+			})
+		end
+	end
+}
